@@ -1,0 +1,28 @@
+
+@font-face {
+    font-family: 'HelveticaRegular';
+    src: url('helvetica.eot');
+    src: url('../../fonts/helvetica.eot') format('embedded-opentype'),
+         url('../../fonts/helvetica.woff') format('woff'),
+         url('../../fonts/helvetica.ttf') format('truetype'),
+         url('../../fonts/helvetica.svg#HelveticaRegular') format('svg');
+}
+
+@font-face {
+    font-family: 'HelveticaCondensedBlackBlack';
+    src: url('../../fonts/helvetica-condensedblack.eot');
+    src: url('../../fonts/helvetica-condensedblack.eot') format('embedded-opentype'),
+         url('../../fonts/helvetica-condensedblack.woff') format('woff'),
+         url('../../fonts/helvetica-condensedblack.ttf') format('truetype'),
+         url('../../fonts/helvetica-condensedblack.svg#HelveticaCondensedBlackBlack') format('svg');
+}
+
+@font-face {
+    font-family: 'HelveticaLTCondensedRegular';
+    src: url('../../fonts/helvetica-lt-condensed-medium.eot');
+    src: url('../../fonts/helvetica-lt-condensed-medium.eot') format('embedded-opentype'),
+         url('../../fonts/helvetica-lt-condensed-medium.woff') format('woff'),
+         url('../../fonts/helvetica-lt-condensed-medium.ttf') format('truetype'),
+         url('../../fonts/helvetica-lt-condensed-medium.svg#HelveticaLTCondensedRegular') format('svg');
+}
+

@@ -1,0 +1,46 @@
+@charset "utf-8";
+/* CSS Document */
+.login-outer { width: 400px; margin: auto; color: #FFF; background: #76be7f}
+.login-container { width: 400px; clear:both}
+.login-container img { border: 0px;}
+.login-container a {color: #ffffff; text-decoration: none}
+.login-container a:hover {color: #ffffff; text-decoration: underline}
+.login-container h4 { font-family: HelveticaNeueLTPro-Th; font-size: 30px; color: #ffffff; letter-spacing: -1px; font-weight: bolder; margin: 20px 0px; text-align: center }
+.login-container .fleft { float: left}
+.login-container .fright { float: right}
+.login-container .label { font: 13px Arial, Helvetica, sans-serif; padding: 12px 0px; text-align: left; float: left}
+.login-container .row1 { width: 100%; padding: 10px 0px; float: left}
+.login-container .row1 .label { width: 150px;}
+
+
+
+/* email */
+.login-container .email {
+    background: #FFFFFF url("../../img/marketplace/icon-email.png") no-repeat scroll 357px 10px ;
+    border: 1px solid #CCCCCC;
+    float: left;
+    height: 40px;
+    width: 388px;
+}
+.login-container .city {
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    float: left;
+    height: 40px;
+    width: 388px;
+}
+/*.login-container .email select { width: 320px; height: 40px; color: #999999; margin: 0; padding: 0px; font: 12px Verdana, Geneva, sans-serif}*/
+.login-container .email input { width: 370px; height: 40px; color: #999999; margin: 0; padding: 0px 10px; font: 12px Verdana, Geneva, sans-serif; background:#ffffff; border:0; line-height:40px;}
+
+.login-container .city input { width: 370px; height: 40px; color: #999999; margin: 0; padding: 0px 10px; font: 12px Verdana, Geneva, sans-serif; background:none; border:0; line-height:40px; }
+
+/* password */
+
+.login-container .password {
+    background:url(../../img/marketplace/icon-pasword.png) no-repeat scroll 357px 10px #FFFFFF;
+    border: 1px solid #CCCCCC;
+    float: left;
+    height: 40px;
+    width: 388px;
+}
+.login-container .password input { width: 370px; height: 40px; color: #999999; margin: 0; padding: 0px 10px; font: 12px Verdana, Geneva, sans-serif; background:#ffffff; border:0; line-height:40px;}

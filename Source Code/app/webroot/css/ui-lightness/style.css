@@ -1,0 +1,44 @@
+body{font-family:Arial, Helvetica, sans-serif; color:#000000; margin:0 auto; padding:0;	background:#fff; font-size:12px; vertical-align:top; background:url(../img/body-bg.gif) top left;}
+* {	margin:0; padding:0;}
+img a {	border:0}
+a {color:#000000}
+.relative {	position:relative;}
+.right {text-align:right;}
+.left {text-align:left;}
+.center {text-align:center;}
+.top {	vertical-align:top;}
+.fLeft {float:left;}
+.fRight {float:right;}
+.clear {clear:both;}
+.hidden {overflow:hidden}
+.clearfix:after {clear: both; visibility: hidden; display: block; height: 0; content: ".";}
+#wraper {margin:0 auto; padding:0; width:986px;}
+#innerContainer	{ overflow:hidden; width:986px;}
+.topCurve, .bottomCurve	{ background:url(../img/topcurve.png) no-repeat left top; height:12px; display:block;}
+.bottomCurve	{ background:url(../img/bottomcurve.png) no-repeat left bottom;}
+.innerTextarea	{ background:url(../img/bg.png) repeat-y left top; overflow:hidden; padding:0px 12px}
+.contenttext	{ width:770px; float:left;}
+.headingBg	{ background:url(../img/heading-bg.png) repeat-x left top; margin:15px 0px 25px 0px; overflow:hidden; height:46px;}
+.headingBg	h2 { }
+.headingBg	h2 img	{ float:left;}
+.headingBg	h2 span	{ background:  url(../img/rightcurve.png) no-repeat right top; display:inline-block; padding:10px 7px 0px 0px; float:right; height:46px; vertical-align:top}
+.rightImg	{ float:right; margin-left:20px; margin-bottom:15px;}
+
+.rightsidebar	{ float:right; width:183px;}
+.innerTextarea p	{margin:0px 12px 25px 12px; font:12px/16px Arial, Helvetica, sans-serif; color:#5b5b5b}
+ul.rightAdverttPanel li	{ margin-bottom:15px;}
+input.regisSubmit {
+	background:url(../img/submitBtnBgH.jpg) left top repeat-x;
+	padding:3px 10px 3px 10px;
+	border:0px solid #000;
+	font-size:14px;
+	color:#FFFFFF;
+	font-family:Arial, Helvetica, sans-serif;
+	width:100px;
+	font-weight:bold;
+	cursor:pointer
+}
+
+<!-- input:focus { background: yellow; color: black; } -->
+
+.divheiglight { background: red; color: black; }

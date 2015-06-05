@@ -1,0 +1,109 @@
+@charset "utf-8";
+/* CSS Document */
+
+.content_left{ width:550px; float:left; min-height:450px;}
+.content_right{width:325px; float:left; padding-top:50px; margin-left:149px;}
+.content_right_inside{width:450px; float:right; padding:10px 0 20px 0}
+.content_right p{
+	padding:5px;
+	margin:0;
+	font-family: "Trebuchet MS";
+	font-size:20px;
+	color:#000000;
+	font-weight:normal;
+	line-height:30px;
+}
+
+.content_right_inside p{
+	padding:5px;
+	margin:0 0 5px 0;
+	font-family:"Trebuchet MS";
+	font-size:28px;
+	color:#000000;
+	font-weight:normal;
+}
+
+.content_right .grade{
+	position: absolute;
+	background-image: url(../../img/marketplace/a.png);
+	background-repeat: no-repeat;
+	float: left;
+	height: 38px;
+	width: 35px;
+	left: 77px;
+	top: 200px;
+	font-family: Arial;
+	font-size: 18px;
+	font-weight: bold;
+	color: #FFF;
+	padding-top: 10px;
+	padding-top: 13px\9;
+	padding-left: 11px;
+}
+.contentList{ list-style:url(../../img/marketplace/square.jpg); margin:0 0 10px 20px; padding:0;}
+.contentList li{ padding:0; font-family: 'garamondpremrpro'; font-size:15px;color:#686868; line-height:18px; margin:10px 0;}
+.contentHeading{font-family:'agaramondpro-regular_0'; font-size:18px;color:#4e4e4e; font-weight:bold;}
+.content_right_inside h1{font-family:'agaramondpro-regular_0'; font-size:34px; color:#a6a6a6; font-weight:normal; margin:0 0 10px 0}
+.black{
+	color:#000;
+	font-size: 28px;
+}
+
+
+/*==========Slider=============*/
+
+#slides{
+	width:717px;
+	position:relative;
+	float:left;
+	margin-top: -10px;
+	margin-right: 5px;
+	margin-bottom: 0;
+	margin-left: 0px;
+
+} 
+.slides_container {width:717px; height:396px; display:none;}
+.slides_container div.sliderContentWrap {width:717px; height:312px; display:block;}
+
+.pagination1 { top:0px;height: 29px; left:0;	list-style: none outside none;	margin:0 0 0 170px;	padding: 0 0 0 20px ;width: 138px;	z-index: 100;}
+.pagination1 li	{float:left; margin-right:5px; margin-top:7px;}
+.pagination1 li a{background:url(../../img/marketplace/padgination.png) 0 0 no-repeat; width:24px; height:24px; text-indent:-99999px; float:left; color:#000;}
+.pagination1 li.current a{background: url(../../img/marketplace/padgination_hover.png) 0 0 no-repeat; width:24px; height:24px; }
+
+
+.pagination {
+	top:0px;
+	height: 29px;
+	left:0;
+	list-style: none outside none;
+	width: 138px;
+	z-index: 100;
+	position: absolute;
+	margin-right: 0;
+	margin-bottom: 0;
+	padding-top: 200px;
+	padding-right: 0;
+	padding-bottom: 0;
+	padding-left: 614px;
+}
+.pagination li	{float:left; margin-right:5px; margin-top:7px;}
+.pagination li a{background:url(../../img/marketplace/padgination.png) 0 0 no-repeat; width:16px; height:16px; float:left; color:#000; text-indent:-99999px;}
+.pagination li.current a{background: url(../../img/marketplace/padgination_hover.png) 0 0 no-repeat; width:16px; height:16px; }
+
+
+
+
+
+
+div.sliderContentWrap  .leftBanner{float:left; width:680px; height:355px; position:relative;}
+div.sliderContentWrap  .rightBannerCon{float:right; width:265px; height:355px; font-size:12px; color:#6b6b6b; line-height:18px;  font-family:Arial, Helvetica, sans-serif; }
+.bgBannerTitle				{background:url(../../img/marketplace/bg-banner-title.gif) 0 0 no-repeat; height:30px; font-size:16px; color:#000;text-align:center; line-height:30px; padding-bottom:10px;}
+
+.productPic{float:left; width:200px; height:290px; padding:18px 0 0 10px; z-index: 999;}
+.sliderRgtTxt{float:left; width:273px; padding-top:30px;}
+.sliderRgtTxt .sliderHeading{color:#222222; font-size:30px; font-weight:bold; margin-left:-80px;}
+.sliderTxt{color:#222222; line-height:24px; font-size:18px; height:109px; overflow:hidden; padding-top:40px;}
+.sliderBtn{padding:0 0 0 70px;}
+
+
+

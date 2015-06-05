@@ -1,0 +1,178 @@
+div.selectbox-wrapper {
+  position:absolute;
+  width:240px !important;
+  background-color:#fff;
+  margin:-14px 0 0 0px;
+  border: 1px solid #ededed;
+  padding:0px 0 0 0;
+  font-size:0.8em;
+  text-align:left;
+  overflow:scroll;
+  overflow:hidden;
+}
+div.selectbox-wrapper ul {
+  list-style-type:none;
+  margin:0px;
+  padding:0px;
+}
+div.selectbox-wrapper ul li.selected { 
+  background:#ccc; color:#000;
+}
+
+div.selectbox-wrapper ul li:hover{  background:#ccc !important; color:#666;}
+
+div.selectbox-wrapper ul li {
+  list-style-type:none;
+  display:block;
+  padding:2px 0 0 10px; height:26px; margin:0;
+  cursor:pointer;
+  width:100%; color:#282f06; line-height:20px; font-size:11px; font-family:Arial, Helvetica, sans-serif;
+}
+
+label {
+    display: block;
+}
+.selectbox /* look&fell of  select box*/
+{ 
+  margin: 0px 5px 10px 0px;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:11px;
+  font-weight:normal;
+  padding-left:10px;
+  display : block;
+  text-align:left; 
+  background:transparent none repeat scroll center center;
+  /*height:18px;*/
+  cursor: pointer;
+  border:none 0;
+  color:#282f06;
+  background-repeat:no-repeat;
+  width:100%;
+  height:100%;
+  line-height:36px;
+}
+
+
+
+select {
+background:transparent none repeat scroll center center;
+}
+
+
+
+
+
+
+
+
+
+div.selectbox-wrapper1 {
+  position:absolute;
+  width:206px !important;
+  background-color:#fff;
+  margin:-14px 0 0 0px;
+  border: 1px solid #ededed;
+  padding:0px 0 0 0;
+  font-size:0.8em;
+  text-align:left;
+  overflow:scroll;
+  overflow:hidden;
+}
+div.selectbox-wrapper1 ul {
+  list-style-type:none;
+  margin:0px;
+  padding:0px;
+}
+div.selectbox-wrapper1 ul li.selected { 
+  background:#ccc; color:#000;
+}
+
+div.selectbox-wrapper1 ul li:hover{  background:#ccc !important; color:#666;}
+
+div.selectbox-wrapper1 ul li {
+  list-style-type:none;
+  display:block;
+  padding:2px 0 0 10px; height:26px; margin:0;
+  cursor:pointer;
+  width:100%; line-height:20px; font-size:11px; color:#282f06; font-family:Arial, Helvetica, sans-serif;
+}
+
+label {
+    display: block;
+}
+.selectbox1 /* look&fell of  select box*/
+{ 
+  margin: 0px 5px 10px 0px;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:11px;
+  font-weight:normal;
+  padding-left:11px;
+  display : block;
+  text-align:left; 
+  background:transparent none repeat scroll center center;
+  /*height:18px;*/
+  cursor: pointer;
+  border:none 0;
+  color:#282f06;
+  background-repeat:no-repeat;
+  width:100%;
+  height:100%;
+  line-height:36px;
+}
+div.selectbox-wrapper2 {
+  position:absolute;
+  width:132px !important;
+  background-color:#fff;
+  padding:0px 0 0 0;
+  font-size:0.8em;
+  text-align:left;
+  overflow:scroll;
+  overflow:hidden;
+  margin:-14px 0 0 6px;
+  border: 1px solid #ededed;
+  z-index: 9999;
+}
+div.selectbox-wrapper2 ul {
+  list-style-type:none;
+  margin:0px;
+  padding:0px;
+}
+div.selectbox-wrapper2 ul li.selected { 
+  background:#ccc; color:#000;
+}
+
+div.selectbox-wrapper2 ul li:hover{  background:#ccc !important; color:#666;}
+
+div.selectbox-wrapper2 ul li {
+  list-style-type:none;
+  display:block;
+  padding:2px 0 0 10px; height:26px; margin:0;
+  cursor:pointer;
+  width:100%; line-height:20px; font-size:11px; color:#282f06; font-family:Arial, Helvetica, sans-serif;
+}
+
+label {
+    display: block;
+}
+.selectbox2 /* look&fell of  select box*/
+{ 
+  margin: 0px 5px 10px 0px;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:11px;
+  font-weight:normal;
+  padding-left:11px;
+  display : block;
+  text-align:left; 
+  background:transparent none repeat scroll center center;
+  /*height:18px;*/
+  cursor: pointer;
+  border:none 0;
+  color:#282f06;
+  background-repeat:no-repeat;
+  width:100%;
+  height:38px;
+  line-height:36px;
+}
+
+
+

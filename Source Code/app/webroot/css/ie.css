@@ -1,0 +1,25 @@
+@charset "utf-8";
+/* CSS Document */
+
+.post-a-task-container .pickcat select {
+    background: none repeat scroll 0 0 #FFFFFF;
+    color: #999999;
+    font: 12px/40px Verdana,Geneva,sans-serif;
+    height: 30px;
+    margin: 0;
+    opacity: 0;
+    padding: 0 10px;
+    position: absolute;
+    width: 235px;
+}
+
+.post-a-task-container .pickcat input {
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    color: #999999;
+    font: 12px Verdana,Geneva,sans-serif;
+    height: 20px;
+    margin: 0;
+    padding: 0 10px;
+    width: 315px;
+}

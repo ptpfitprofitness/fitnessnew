@@ -1,0 +1,178 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: a <s@s.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+
+msgid "JoinNow"
+msgstr "JOIN NOW"
+
+msgid "Login"
+msgstr "LOGIN"
+
+msgid "SignUpXYZ"
+msgstr "Customer Sign Up"
+
+msgid "AreYouASpecialist"
+msgstr "Are you a specialist?"
+
+msgid "RegisterHere"
+msgstr "Register here!"
+
+msgid "Password"
+msgstr "Password"
+
+msgid "OnlineCounsellingM"
+msgstr "Online Counselling"
+
+msgid "OurSpecialistsM"
+msgstr "Our Specialists"
+
+msgid "YourPrivacyM"
+msgstr "Your Privacy"
+
+msgid "SiteSecurityM"
+msgstr "Site Security"
+
+msgid "AboutUsM"
+msgstr "About Us"
+
+msgid "BlogM"
+msgstr "Blog"
+
+msgid "FaceToFaceH"
+msgstr "Face-to-Face Online Counselling For Everyone"
+
+msgid "UsernameH"
+msgstr "Username"
+
+msgid "AnythingYouLikeH"
+msgstr "(Anything you like)"
+
+msgid "FirstNameH"
+msgstr "First Name"
+
+msgid "LastNameH"
+msgstr "Last Name"
+
+msgid "EmailH"
+msgstr "Email"
+
+msgid "OptionalH"
+msgstr "(optional)"
+
+msgid "GenderH"
+msgstr "Gender"
+
+msgid "MaleH"
+msgstr "Male"
+
+msgid "FemaleH"
+msgstr "Female"
+
+msgid "IAgreeToTheTermsConditionsH"
+msgstr "I agree to the Terms & Conditions"
+
+msgid "HowItWorksH"
+msgstr "How It Works"
+
+msgid "WhatIsYourCurrentChallengeH"
+msgstr "What is your current challenge?"
+
+msgid "EnterKeywordToSearchAllSpecialistsH"
+msgstr "Enter keyword to search all specialists"
+
+msgid "AdvancedSearchH"
+msgstr "Advanced Search"
+
+msgid "SadnessH"
+msgstr "Sadness"
+
+msgid "StressH"
+msgstr "Stress"
+
+msgid "RelationshipsH"
+msgstr "Relationships"
+
+msgid "AddictionH"
+msgstr "Addiction"
+
+msgid "SelfConfidenceH"
+msgstr "Self-Confidence"
+
+msgid "MoreH"
+msgstr "More"
+
+msgid "FeaturedH"
+msgstr "Featured"
+
+msgid "SpecialistsH"
+msgstr "Specialists"
+
+msgid "ViewProfileH"
+msgstr "View Profile"
+
+msgid "WorkWithUsH"
+msgstr "Work with us?"
+
+msgid "WorkWithUsCH"
+msgstr ""
+"Got a great idea or a problem that youneed help solving? We had love to chat "
+"about your business."
+
+msgid "AboutCompanyH"
+msgstr "About Company"
+
+msgid "OurClientsH"
+msgstr "Our Clients"
+
+msgid "ServicesH"
+msgstr "Services"
+
+msgid "QuickLinksH"
+msgstr "Quick Links"
+
+msgid "AffiliatesH"
+msgstr "Affiliates"
+
+msgid "HelpH"
+msgstr "Help"
+
+msgid "CareersH"
+msgstr "Careers"
+
+msgid "GiveAndyACallOnH"
+msgstr "Give Andy a call on"
+
+msgid "TweetUsH"
+msgstr "Tweet us"
+
+msgid "EmailUsH"
+msgstr "Email us"
+
+msgid "OrComeAndH"
+msgstr "Or come and"
+
+msgid "VisitOurOfficeH"
+msgstr "visit our office"
+
+msgid "AllRightsReservedH"
+msgstr "All rights reserved."
+
+msgid "ListingPageTitleS"
+msgstr "Listing Page Title"
+
+msgid "WhatIsYourCurrentChallenge"
+msgstr "What is your current challenge?"
+
+msgid "BrowseSpecialistsS"
+msgstr "Browse Specialists"
+
+msgid "YogendraXYZ"
+msgstr "YogiDixit"

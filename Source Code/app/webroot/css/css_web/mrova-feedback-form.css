@@ -1,0 +1,54 @@
+label {
+	display:block;
+	padding-bottom:5px;
+	margin-top:20px;
+	clear:both;
+}
+#mrova-feedback {
+	display: hidden;
+	width:40%;
+	position: fixed;
+	/*right: -462px;*/
+	right: -44%;
+	border: 1px solid #fe6d4c;
+	padding: 8px 20px;
+	background-color: #fff;
+	z-index:99999;
+}
+#mrova-contactform ul {
+	margin: 0;
+	padding: 0;
+}
+#mrova-contactform input[type="text"], #mrova-contactform textarea {
+	width:100%;
+	padding:7px;
+	border: 1px solid #ccc;
+}
+#mrova-contactform ul li {
+	list-style:none;
+}
+#mrova-img-control {
+	cursor: pointer;
+	position: absolute;
+	left: -50px;
+	width: 50px;
+	background: transparent url(../../images/feedback_img.png);
+	height: 152px;
+}
+#mrova-contactform #mrova-sendbutton {
+	width:122px;
+	background:#fe6d4c;
+	color:#fff;
+	cursor:pointer;
+	padding:5px 10px;
+	border: none;
+	margin-top:20px;
+	font-weight:700;
+}
+
+.select-city {
+    border: 1px solid #CCCCCC;
+    padding: 7px;
+    width: 418px;
+}
+.gender{float:left; padding:10px 0;  margin-right: 20px;}
