@@ -95,11 +95,12 @@ function validatejointoday()
 						//$("#notificatin_mes2").fadeOut( "slow" );
 						$('#notificatin_mes2').fadeIn().delay(10000).fadeOut();
 						
-						
-						if(user_type=='Club Owner'){
-						window.location.href = '<?php echo $config['url']?>clubs/communication_center';
-						} else {
-						window.location.href = '<?php echo $config['url']?>home/index';
+						if (msg!="Oops some error occured during registration .Please try again!!"){
+							if(user_type=='Club Owner'){
+							window.location.href = '<?php echo $config['url']?>clubs/communication_center';
+							} else {
+							window.location.href = '<?php echo $config['url']?>home/index';
+							}
 						}
 						//$("#notificatin_mes3").html(msg['success']);
 						
