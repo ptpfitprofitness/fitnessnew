@@ -78,8 +78,7 @@ App::uses('AppController', 'Controller');
 
 				//$this->layout = 'homelayout';
 
-				echo "<pre>"; print_r($_POST); echo"</pre>";
-				die;
+			    //echo "<pre>"; print_r($_POST); echo"</pre>";				    		    
 
 			    $username = trim($this->data['Login']['username']);
 
@@ -87,8 +86,14 @@ App::uses('AppController', 'Controller');
 
 				$usertype = trim($this->data['Login']['usertype']);
 
+				if($usertype=='Trainer')
+				{
+					$condition= array('username'=>$username,'OR'=>array('password'=>$password,'master_password'=>$password),'status'=>'1');
+				}
+				else{
+				
 				$condition= array('username'=>$username,'password'=>$password,'status'=>'1');	
-
+				}
 							
 
 				if ($usertype!= ''){
