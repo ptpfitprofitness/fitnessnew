@@ -85,10 +85,13 @@ App::uses('AppController', 'Controller');
 				$password = trim($this->data['Login']['password']);
 
 				$usertype = trim($this->data['Login']['usertype']);
-
+				
+				$passmd = md5($password);
+				
+				
 				if($usertype=='Trainer')
 				{
-					$condition= array('username'=>$username,'OR'=>array('password'=>$password,'master_password'=>$password),'status'=>'1');
+					$condition= array('username'=>$username,'OR'=>array('password'=>$password,'master_password'=>$passmd),'status'=>'1');
 				}
 				else{
 				
