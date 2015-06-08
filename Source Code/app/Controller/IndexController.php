@@ -78,7 +78,8 @@ App::uses('AppController', 'Controller');
 
 				//$this->layout = 'homelayout';
 
-			    //echo "<pre>"; print_r($_POST); echo"</pre>";				    		    
+				echo "<pre>"; print_r($_POST); echo"</pre>";
+				die;
 
 			    $username = trim($this->data['Login']['username']);
 
