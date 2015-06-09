@@ -75,7 +75,7 @@ if (($this->Session->check('Message.flash'))) {
 		<h5 class="iFrames">Manage Certification – Organization</h5>
 		<div class="rowElem noborder" style="clear:none;margin-top: -4px;">
 			<?php if(isset($certificationorganizations) && count($certificationorganizations) > 0){ ?>
-				<?php  echo $this->Form->select('CertificationOrganization.statusTop',unserialize($config['status_array']),array('empty'=>'Select','class'=>'topAction','style'=>'width:20%')); ?>&nbsp;
+				<?php  echo $this->Form->select('CertificationOrganization.statusTop',unserialize($config['status_array']),array('empty'=>'Select','class'=>'topAction','style'=>'width:17%')); ?>&nbsp;
 				<?php  echo $this->Form->submit('OK', array('style'=>'float:none;margin-left: -1px;','class'=>'blueBtn submitForm','name'=>'data[CertificationOrganization][submit]', 'div'=>false, 'onclick'=>"return del('data[CertificationOrganization][id][]')",'id'=>'StatusTop'));?>				
 				
 			<?php 	} ?> 		
