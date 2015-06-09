@@ -150,7 +150,7 @@ function getcoupontype(str)
 
 		<input type="submit" value="Save" class="blueBtn submitForm" />
 		
-		<a class="blueBtn submitForm" style="padding: 2px 13px;font-size:12px;font-size:10px;" href="<?php echo $this->Html->url(array('controller'=>'faqs', 'action'=>'index')); ?>">CANCEL</a>
+		<a class="blueBtn submitForm" style="padding: 2px 13px;font-size:12px;font-size:10px;" href="<?php echo $this->Html->url(array('controller'=>'coupons', 'action'=>'index')); ?>">CANCEL</a>
 		
 		<div class="fix"></div>
 
