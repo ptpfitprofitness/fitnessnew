@@ -274,7 +274,10 @@ App::uses('AppController', 'Controller');
 			
 		}
 		public function admin_addcertification(){
-			
+			echo "<pre>";
+			print_r($this->data);
+			echo "</pre>";
+			die;
 				
 			
 			$this->set("certificationorganizations",$this->CertificationOrganization->find('list',array('fields'=>array('CertificationOrganization.id','CertificationOrganization.name'),'order'=>array('CertificationOrganization.name ASC'))));
