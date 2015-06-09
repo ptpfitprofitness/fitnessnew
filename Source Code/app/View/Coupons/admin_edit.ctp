@@ -11,6 +11,28 @@ $(function() {
 $( "#datepicker" ).datepicker();
 $( "#datepicker2" ).datepicker();
 });
+function getcoupontype()
+{
+var content_html='';
+var content_html1='';
+var selectvalue = $('#CouponDiscountType option:selected').text();
+	if (selectvalue=='Fixed Value')
+	{
+	//	$('#main-discount_fixed_value').show();
+	//	$('#main-discount_percent_value').hide();
+		 content_html = "<div class='rowElem noborder' id='main-discount_fixed_value'>	<label>Fixed Discount:</label><div class='formRight'><input name='data[Coupon][discount_fixed_value]' maxlength='255' id='discount_fixed_value' type='text' value='<?php echo $this->request->data['Coupon']['discount_fixed_value']; ?>'></div><div class='fix'></div></div>";
+		
+		
+		$('#coupon_type_values').html(content_html);
+	}
+	if (selectvalue=='Percentage')
+	{		
+		//$('#main-discount_percent_value').show();
+		//$('#main-discount_fixed_value').hide();
+		 content_html1 = "<div class='rowElem noborder' id='main-discount_percent_value'><label>Percentage Discount:</label><div class='formRight'><input name='data[Coupon][discount_percent_value]' maxlength='255' id='discount_percent_value' type='text' value='<?php echo $this->request->data['Coupon']['discount_percent_value']; ?>'></div><div class='fix'></div></div>";
+		$('#coupon_type_values').html(content_html1);
+	}
+}
 </script>
 <div class="content">
 	<div class="content" id="container">
@@ -41,20 +63,25 @@ $( "#datepicker2" ).datepicker();
 			</div>
 			<div class="fix"></div>
 		</div>
-		
+
 		<div class="rowElem noborder">
 			<label>Coupon Type:</label>
 			<div class="formRight">
 				<?php $notify=array('Fixed'=>'Fixed Value','Percentage'=>'Percentage'); ?>
 				
-				<?php echo $this->Form->select('Coupon.discount_type', $notify, array('style'=>'','empty'=>'-- Select Coupon Type --','default'=>'Fixed'));?>
+				<?php echo $this->Form->select('Coupon.discount_type', $notify, array('empty'=>'-- Select Coupon Type --','default'=>'Fixed', 'onchange'=>
+				"getcoupontype();"));?>
 				
 				<?php echo $this->Form->error('Coupon.discount_type', null, array('class' => 'error')); ?>
 			</div>
 			<div class="fix"></div>
 		</div>
 		
-		<div class="rowElem noborder">
+		<div id="coupon_type_values" >
+		
+		
+		<?php if($this->data[Coupon][discount_type]=='Percentage'){ ?>
+		<div class="rowElem noborder" id="main-discount_percent_value">
 			<label>Percentage Discount:</label>
 			<div class="formRight">
 				<?php echo $this->Form->text('Coupon.discount_percent_value', array('maxlength'=>255,'id'=>'discount_percent_value')); ?>
@@ -63,8 +90,9 @@ $( "#datepicker2" ).datepicker();
 			</div>
 			<div class="fix"></div>
 		</div>
+		<?php }else { ?>
 		
-		<div class="rowElem noborder">
+		<div class="rowElem noborder" id="main-discount_fixed_value">
 			<label>Fixed Discount:</label>
 			<div class="formRight">
 				<?php echo $this->Form->text('Coupon.discount_fixed_value', array('maxlength'=>255,'id'=>'discount_fixed_value')); ?>
@@ -73,7 +101,8 @@ $( "#datepicker2" ).datepicker();
 			</div>
 			<div class="fix"></div>
 		</div>
-		
+		<?php } ?>
+		</div>
 		<div class="rowElem noborder">
 			<label>Redemption Limit<span style="color:red;">*</span>:</label>
 			<div class="formRight">
