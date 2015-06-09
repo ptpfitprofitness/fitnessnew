@@ -36,7 +36,16 @@ App::uses('AppController', 'Controller');
 						$this->request->data["CertificationOrganization"]["modification_date"] 		    = date("Y-m-d h:i:s");
 					    	//pr($this->request->data);
 					    	//die('Here');
-						if($this->CertificationOrganization->save($this->data)) {				
+						if($this->CertificationOrganization->save($this->data)) {	
+						
+							$data1['CertificationOrganization']['acronym']=$this->data['Certification']['acronym'];
+							$data1['CertificationOrganization']['phone']=$this->data['Certification']['phone'];
+							$data1['CertificationOrganization']['webaddress']=$this->data['Certification']['webaddress'];
+							$data1['CertificationOrganization']['contact_name']=$this->data['Certification']['contact_name'];
+							$data1['CertificationOrganization']['verification_link']=$this->data['Certification']['verification_link'];
+							$data1['CertificationOrganization']['status']=1;
+							$this->CertificationOrganization->save($data1);	
+												
 							$this->Session->setFlash('Certification Organization has been created successfully.');
 							$this->redirect('/admin/certificationorganizations/');
 						} else {
@@ -274,10 +283,7 @@ App::uses('AppController', 'Controller');
 			
 		}
 		public function admin_addcertification(){
-			echo "<pre>";
-			print_r($this->data);
-			echo "</pre>";
-			die;
+			
 				
 			
 			$this->set("certificationorganizations",$this->CertificationOrganization->find('list',array('fields'=>array('CertificationOrganization.id','CertificationOrganization.name'),'order'=>array('CertificationOrganization.name ASC'))));
