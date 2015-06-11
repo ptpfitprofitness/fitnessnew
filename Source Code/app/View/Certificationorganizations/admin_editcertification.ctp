@@ -32,7 +32,7 @@
 
 			</div><div class="fix"></div></div>
 			
-			<div class="rowElem noborder"><label>Certification Category<span style="color:red;">*</span>:</label><div class="formRight">
+			<div class="rowElem noborder"><label>Certification Category:</label><div class="formRight">
 
 				<?php echo $this->Form->text('Certification.course', array('maxlength'=>255)); ?>
 
