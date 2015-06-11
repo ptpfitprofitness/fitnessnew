@@ -19,7 +19,7 @@ App::uses('AppController', 'Controller');
 
 		public $name 		= 'Certificationorganizations';
 		public $helpers 	= array('Html','Session','Cksource');
-	public $uses 		= array('Country','Member','ClubBranch','Club','ClubContact','CertificationOrganization','Certification','Degree');
+	public $uses 		= array('Country','Member','ClubBranch','Club','ClubContact','CertificationOrganization','Certification','CertificationCat','Degree');
 		public $components  = array('Upload');			
 		public $facebook;
 		public $amazon;
@@ -282,6 +282,7 @@ App::uses('AppController', 'Controller');
 			
 			
 		}
+		
 		public function admin_addcertification(){
 			
 				
@@ -513,6 +514,106 @@ App::uses('AppController', 'Controller');
 				}
 			}	
 		}
+		
+		
+		public function admin_certificationcategory($status = null)
+		{		
+			$conditions = array();
+			$keyword 	= ""; 
+			
+			if(!empty($this->data)){				
+				if( array_key_exists("keyword",$this->data) && !empty($this->data["keyword"]) && ($this->data["keyword"] != "Search by certification category...") ) {					
+					$conditions["OR"] = array(
+												"CertificationCat.category_name LIKE" => "%".$this->data["keyword"]."%"
+											);
+					if( !empty($this->params["named"]["keyword"]) )						
+						$keyword = $this->params["named"]["keyword"];					
+					$this->redirect('/admin/certificationorganizations/certificationcategory/keyword:'.$this->data["keyword"]);
+				}else{						
+						if( !empty($this->data['CertificationCat']['statusTop']) ) {
+							$action = $this->data['CertificationCat']['statusTop'];
+						}elseif( !empty($this->data['CertificationCat']['status'])) {
+							$action = $this->data['CertificationCat']['status'];
+						}
+						
+						if(isset($this->data['CertificationCat']['id']) && count($this->data['CertificationCat']['id']) > 0) {
+							$this->update_statusb(trim($action), $this->data['CertificationCat']['id'], count($this->data['CertificationCat']['id']));
+						} else {
+							
+							
+							if(isset($this->data["submit"]) && isset($this->data["keyword"]) && ($this->data["keyword"]=='' || $this->data["keyword"]=='Search by certification category...') && $this->data["submit"]=='Search'){
+								$this->Session->setFlash('Please enter keyword to perform search.');
+							}
+							else{
+								$this->Session->setFlash('Please select any checkbox to perform any action.');
+							}
+						}
+				}
+			}
+			
+			if( !empty($this->params["named"]["keyword"]) ) {
+				$conditions["OR"] = array(
+									"CertificationCat.category_name LIKE" => "%".$this->params["named"]["keyword"]."%");
+				$keyword = $this->params["named"]["keyword"];
+			}			
+			$this->set('keyword', $keyword);
+			//die('here');
+			$this->paginate = array("conditions"=>$conditions,'limit' => '10', 'order' => array('CertificationCat.category_name' => 'ASC'));
+			
+			$certificationcats = $this->paginate('CertificationCat'); //default take the current
+			
+			
+			
+			$this->set('certificationcats', $certificationcats);
+			$this->set('mode', array('delete'=>'Delete'));
+			$this->set('status', $status);
+			$this->set('tab', '');
+			
+			
+			
+			$this->set('limit', $this->params['request']['paging']['CertificationCat']['options']['limit']);
+			$this->set('page', $this->params['request']['paging']['CertificationCat']['options']['page']);
+			
+			
+		}
+		
+		
+		
+		
+		
+		
+		public function admin_addcertificationcategory(){
+			if(!empty($this->data)) {
+		
+				$this->CertificationCat->set($this->data);
+				if($this->CertificationCat->validates()) {
+						
+					    
+					    $this->request->data["CertificationCat"]["date_added"] 		    = date("Y-m-d h:i:s");
+						$this->request->data["CertificationCat"]["date_modified"] 		    = date("Y-m-d h:i:s");
+					    	
+					   
+						if($this->CertificationCat->save($this->request->data)) {	
+										
+							$this->Session->setFlash('Certification Category has been created successfully.');
+							$this->redirect('/admin/certificationorganizations/certificationcategory/');
+						} else {
+							$this->Session->setFlash('Some error has been occured. Please try again.');
+						}
+				}	
+			}
+		}
+		
+		public function admin_viewcertificationcategory(){
+		
+			if(!empty($this->params["pass"][0])) {
+				$this->set("certificationcategoryInfo",$this->CertificationCat->find("first",array("conditions"=>array("CertificationCat.id"=>$this->params["pass"][0]))));	
+			}else{
+				$this->redirect($_SERVER["HTTP_REFERER"]);
+			}	
+		}
+		
+		
 		
 		
 	}
