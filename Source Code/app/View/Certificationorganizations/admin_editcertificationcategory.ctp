@@ -6,9 +6,6 @@
 ##  Description :		Admin Add New Club
 ## *****************************************************************
 ?>
-
-
-
 <div class="content" style="width:85%;padding-left:70px;">
  
 <div class="content" id="container">

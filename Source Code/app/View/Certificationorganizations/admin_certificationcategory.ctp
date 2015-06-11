@@ -34,7 +34,29 @@ echo $this->Html->css('dataTable'); ?>
 		$this->Paginator->options(array('url' => $url));
 	}
 ?>
-
+<script type="text/javascript">
+function del(field) {
+	 /*if(!anyChecked(field)) {
+	 	// alert('Please select atleast one record to perform any action.');
+		jAlert('Please select atleast one record to perform any action.', 'Alert::<?php echo $config['base_title']; ?>');
+	 	return false;
+	 } else {
+		 if(jQuery('#Status').val() == 'delete'){
+			if(!confirm("Are you sure want to perform this action?")){
+				return false;
+			}else{
+				return true;
+			}
+		 }else if(jQuery('#Status').val() == ''){
+		 	jAlert('Please select action.', 'Alert::<?php echo $config['base_title']; ?>');
+	 		return false;
+		 } else {
+			 return true;
+		 }
+	 }*/
+}
+//-->
+</script> 
 <?php echo $this->Form->create(null,array('controller'=>'certificationorganizations', 'action'=>'certificationcategory', 'enctype'=>'multipart/form-data', 'class'=>'mainForm', 'id'=>'valid')); ?>
 
 <div class="content"> 

@@ -522,14 +522,15 @@ App::uses('AppController', 'Controller');
 			$keyword 	= ""; 
 			
 			if(!empty($this->data)){				
-				if( array_key_exists("keyword",$this->data) && !empty($this->data["keyword"]) && ($this->data["keyword"] != "Search by certification category...") ) {					
+				if( array_key_exists("keyword",$this->data) && !empty($this->data["keyword"]) && ($this->data["keyword"] != "Search by certification category ...") ) {					
 					$conditions["OR"] = array(
 												"CertificationCat.category_name LIKE" => "%".$this->data["keyword"]."%"
 											);
 					if( !empty($this->params["named"]["keyword"]) )						
 						$keyword = $this->params["named"]["keyword"];					
 					$this->redirect('/admin/certificationorganizations/certificationcategory/keyword:'.$this->data["keyword"]);
-				}else{						
+				}else{	
+			
 						if( !empty($this->data['CertificationCat']['statusTop']) ) {
 							$action = $this->data['CertificationCat']['statusTop'];
 						}elseif( !empty($this->data['CertificationCat']['status'])) {
@@ -537,7 +538,8 @@ App::uses('AppController', 'Controller');
 						}
 						
 						if(isset($this->data['CertificationCat']['id']) && count($this->data['CertificationCat']['id']) > 0) {
-							$this->update_statusb(trim($action), $this->data['CertificationCat']['id'], count($this->data['CertificationCat']['id']));
+						//die('JEre');
+							$this->update_statuscat(trim($action), $this->data['CertificationCat']['id'], count($this->data['CertificationCat']['id']));
 						} else {
 							
 							
@@ -616,6 +618,7 @@ App::uses('AppController', 'Controller');
 		
 		public function admin_editcertificationcategory($id = null)
 		{
+			$this->set("certificationorganizations",$this->CertificationOrganization->find('list',array('fields'=>array('CertificationOrganization.id','CertificationOrganization.name'))));
 	
 			if(!empty($this->data)){
 			
@@ -646,6 +649,35 @@ App::uses('AppController', 'Controller');
 						$this->redirect('/admin/certificationorganizations/certificationcategory/');
 				}
 			}	
+		}
+		/**************Degree Start Here******************/
+		public function update_statuscat($status, $ids, $count){
+			switch(trim($status)){
+				case "activate":
+					for($ctr=0;$ctr<$count;$ctr++){
+						$this->CertificationCat->id = $ids[$ctr];
+						$this->CertificationCat->saveField("status", '1');
+					}
+					$this->Session->setFlash('Certification Category(s) has been activated successfully.');
+					break;
+				case "deactivate":
+					for($ctr=0;$ctr<$count;$ctr++){
+						$this->CertificationCat->id = $ids[$ctr];
+						$this->CertificationCat->saveField("status", '0');
+					}
+					$this->Session->setFlash('Certification Category(s) has been deactivated successfully.');
+					break;
+				case "delete":
+					for($i=0;$i<$count;$i++){
+						$this->CertificationCat->create();
+						$this->CertificationCat->id = $ids[$i];
+						
+						$this->CertificationCat->delete($ids[$i]);
+						
+					}
+					$this->Session->setFlash('Certification Category(s) has been deleted successfully.');
+					break;
+			}
 		}
 		
 		
