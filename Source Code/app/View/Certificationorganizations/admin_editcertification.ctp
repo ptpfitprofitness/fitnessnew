@@ -17,24 +17,24 @@
 		<fieldset>
 		<div class="widget first">
 		<div class="head"><h5 class="iList">Edit Certification</h5><a href="<?php echo $this->Html->url(array('controller'=>'certificationorganizations', 'action'=>'certification')); ?>" style="float: right; margin-top: 5px; padding: 2px 13px;margin-right:15px;" class='blueBtn'>List All</a></div> 
-		
-		<div class="rowElem noborder"><label>Name<span style="color:red;">*</span>:</label><div class="formRight">
-
-				<?php echo $this->Form->text('Certification.name', array('maxlength'=>255, 'class'=>'validate[required] ')); ?>
-
-				<?php echo $this->Form->error('Certification.name', null, array('class' => 'error')); ?>
-
-			</div><div class="fix"></div></div>
-			<div class="rowElem noborder"><label>Certification Organization<span style="color:red;">*</span>:</label><div class="formRight">
+		<div class="rowElem noborder"><label>Certification Organization<span style="color:red;">*</span>:</label><div class="formRight">
                     
 <?php  echo $this->Form->select('Certification.certi_orgaid',$certificationorganizations,array('empty'=>'-- Select Certification Organization --','class'=>'topAction','style'=>'width:50%')); ?>
 
 				<?php echo $this->Form->error('Certification.certi_orgaid', null, array('class' => 'error')); ?>
 
 			</div><div class="fix"></div></div>
-			<div class="rowElem noborder"><label>Certification<span style="color:red;">*</span>:</label><div class="formRight">
+		<div class="rowElem noborder"><label>Certification Name<span style="color:red;">*</span>:</label><div class="formRight">
 
-				<?php echo $this->Form->text('Certification.course', array('maxlength'=>255, 'class'=>'validate[required] ')); ?>
+				<?php echo $this->Form->text('Certification.name', array('maxlength'=>255, 'class'=>'validate[required] ')); ?>
+
+				<?php echo $this->Form->error('Certification.name', null, array('class' => 'error')); ?>
+
+			</div><div class="fix"></div></div>
+			
+			<div class="rowElem noborder"><label>Certification Category<span style="color:red;">*</span>:</label><div class="formRight">
+
+				<?php echo $this->Form->text('Certification.course', array('maxlength'=>255)); ?>
 
 				<?php echo $this->Form->error('Certification.course', null, array('class' => 'error')); ?>
 
