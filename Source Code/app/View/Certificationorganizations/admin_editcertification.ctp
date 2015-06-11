@@ -32,13 +32,21 @@
 
 			</div><div class="fix"></div></div>
 			
-			<div class="rowElem noborder"><label>Certification Category:</label><div class="formRight">
+			<!--<div class="rowElem noborder"><label>Certification Category:</label><div class="formRight">
 
-				<?php echo $this->Form->text('Certification.course', array('maxlength'=>255)); ?>
+				<?php //echo $this->Form->text('Certification.course', array('maxlength'=>255)); ?>
 
-				<?php echo $this->Form->error('Certification.course', null, array('class' => 'error')); ?>
+				<?php //echo $this->Form->error('Certification.course', null, array('class' => 'error')); ?>
 
-			</div><div class="fix"></div></div>
+			</div><div class="fix"></div></div>-->
+			
+			
+			<div class="rowElem noborder"><label>Certification Category:</label>
+			<div class="formRight">
+       <?php  echo $this->Form->select('Certification.course',$certificationcategory,array('empty'=>'-- Select Certification Category --','class'=>'topAction','style'=>'width:50%')); ?>
+
+			</div><div class="fix"></div>
+			</div>	
 
 			<div class="rowElem noborder"><label>Expiration Date Required<span style="color:red;">*</span>:</label><div class="formRight">
 <?php $exp_option = array(1=>'Yes',0 =>'No'); ?>

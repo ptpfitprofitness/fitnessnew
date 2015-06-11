@@ -289,6 +289,9 @@ App::uses('AppController', 'Controller');
 			
 			$this->set("certificationorganizations",$this->CertificationOrganization->find('list',array('fields'=>array('CertificationOrganization.id','CertificationOrganization.name'),'order'=>array('CertificationOrganization.name ASC'))));
 			
+			$this->set("certificationcategory",$this->CertificationCat->find('list',array('fields'=>array('CertificationCat.category_name','CertificationCat.category_name'),'order'=>array('CertificationCat.category_name ASC'))));
+			
+			
 			if(!empty($this->data)) {
 		
 				$this->Certification->set($this->data);
@@ -297,6 +300,7 @@ App::uses('AppController', 'Controller');
 					    
 					    $this->request->data["Certification"]["added_date"] 		    = date("Y-m-d h:i:s");
 						$this->request->data["Certification"]["modification_date"] 		    = date("Y-m-d h:i:s");
+						$this->request->data["Certification"]["status"] 		    = 1;
 					    	//pr($this->request->data);
 					    //$this->loadModel('ClubBranch');
 					   
@@ -325,6 +329,8 @@ App::uses('AppController', 'Controller');
 		{
 				
 			$this->set("certificationorganizations",$this->CertificationOrganization->find('list',array('fields'=>array('CertificationOrganization.id','CertificationOrganization.name'))));
+			
+			$this->set("certificationcategory",$this->CertificationCat->find('list',array('fields'=>array('CertificationCat.category_name','CertificationCat.category_name'),'order'=>array('CertificationCat.category_name ASC'))));
 			
 			if(!empty($this->data)){
 			
