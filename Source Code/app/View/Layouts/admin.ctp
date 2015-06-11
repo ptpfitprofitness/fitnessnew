@@ -158,6 +158,11 @@ $( "#datepicker" ).datepicker();
 			
 			<li <?php if($this->params['controller'] == 'certificationorganizations' &&  ($this->params['action'] == 'admin_certification'|| $this->params['action'] == 'admin_addcertification'|| $this->params['action'] == 'admin_editcertification' ||$this->params['action'] == 'admin_viewcertification')){ ?> class="selected" <?php } ?> ><a href="<?php echo $this->Html->url(array('controller'=>'certificationorganizations', 'action'=>'admin_certification')); ?>">Manage Certification</a></li>
 			
+			
+			<li <?php if($this->params['controller'] == 'certificationorganizations' &&  ($this->params['action'] == 'admin_certificationcategory'|| $this->params['action'] == 'admin_addcertificationcategory'|| $this->params['action'] == 'admin_editcertificationcategory' ||$this->params['action'] == 'admin_viewcertificationcategory')){ ?> class="selected" <?php } ?> ><a href="<?php echo $this->Html->url(array('controller'=>'certificationorganizations', 'action'=>'admin_certificationcategory')); ?>">Manage Certification Category</a></li>
+			
+			
+			
 			<li <?php if($this->params['controller'] == 'certificationorganizations' &&  ($this->params['action'] == 'admin_degree'|| $this->params['action'] == 'admin_adddegree'|| $this->params['action'] == 'admin_editdegree' ||$this->params['action'] == 'admin_viewdegree')){ ?> class="selected" <?php } ?> ><a href="<?php echo $this->Html->url(array('controller'=>'certificationorganizations', 'action'=>'admin_degree')); ?>">Manage Degrees</a></li>
 			
 			<li <?php if($this->params['controller'] == 'trainers'){ ?> class="selected" <?php } ?> ><a href="<?php echo $this->Html->url(array('controller'=>'trainers', 'action'=>'index')); ?>">Manage Trainers</a></li>		
