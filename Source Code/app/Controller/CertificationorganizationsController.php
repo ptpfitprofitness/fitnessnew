@@ -289,7 +289,10 @@ App::uses('AppController', 'Controller');
 			
 			$this->set("certificationorganizations",$this->CertificationOrganization->find('list',array('fields'=>array('CertificationOrganization.id','CertificationOrganization.name'),'order'=>array('CertificationOrganization.name ASC'))));
 			
-			$this->set("certificationcategory",$this->CertificationCat->find('list',array('fields'=>array('CertificationCat.category_name','CertificationCat.category_name'),'order'=>array('CertificationCat.category_name ASC'))));
+			
+			$certificationcategory = $this->CertificationCat->find('list', array(       'fields' => array('CertificationCat.category_name', 'CertificationCat.category_name'),'conditions' => array('CertificationCat.status' => 1),'order'=>array('CertificationCat.category_name ASC')));			
+			
+			$this->set("certificationcategory",$certificationcategory);
 			
 			
 			if(!empty($this->data)) {
@@ -330,7 +333,9 @@ App::uses('AppController', 'Controller');
 				
 			$this->set("certificationorganizations",$this->CertificationOrganization->find('list',array('fields'=>array('CertificationOrganization.id','CertificationOrganization.name'))));
 			
-			$this->set("certificationcategory",$this->CertificationCat->find('list',array('fields'=>array('CertificationCat.category_name','CertificationCat.category_name'),'order'=>array('CertificationCat.category_name ASC'))));
+			$certificationcategory = $this->CertificationCat->find('list', array(       'fields' => array('CertificationCat.category_name', 'CertificationCat.category_name'),'conditions' => array('CertificationCat.status' => 1),'order'=>array('CertificationCat.category_name ASC')));			
+			
+			$this->set("certificationcategory",$certificationcategory);
 			
 			if(!empty($this->data)){
 			
