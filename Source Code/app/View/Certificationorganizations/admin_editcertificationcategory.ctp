@@ -9,8 +9,9 @@
 <div class="content" style="width:85%;padding-left:70px;">
  
 <div class="content" id="container">
-<?php echo $this->Form->create(null,array('controller'=>'certificationorganizations', 'action'=>'addcertificationcategory', 'enctype'=>'multipart/form-data', 'class'=>'mainForm', 'id'=>'valid')); ?>
+<?php echo $this->Form->create(null,array('controller'=>'certificationorganizations', 'action'=>'editcertificationcategory', 'enctype'=>'multipart/form-data', 'class'=>'mainForm', 'id'=>'valid')); ?>
 <!-- Input text fields -->
+<?php echo $this->Form->hidden('CertificationCat.id'); ?>
 
 <fieldset>
 

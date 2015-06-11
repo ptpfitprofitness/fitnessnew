@@ -623,7 +623,7 @@ App::uses('AppController', 'Controller');
 			if(!empty($this->data)){
 			
 			$this->CertificationCat->set($this->data);
-			$this->CertificationCat->id = $this->data['Certification']['id'];		
+			$this->CertificationCat->id = $this->data['CertificationCat']['id'];		
 			
 							
 			if($this->CertificationCat->validates()) {
