@@ -614,6 +614,41 @@ App::uses('AppController', 'Controller');
 		}
 		
 		
+		public function admin_editcertificationcategory($id = null)
+		{
+	
+			if(!empty($this->data)){
+			
+			$this->CertificationCat->set($this->data);
+			$this->CertificationCat->id = $this->data['Certification']['id'];		
+			
+							
+			if($this->CertificationCat->validates()) {
+				
+				
+				$this->request->data["CertificationCat"]["date_modified"] 		    = date("Y-m-d h:i:s");
+				if($this->CertificationCat->save($this->data)) {
+					$this->Session->setFlash('Certification Category information has been updated successfully.');
+					$this->redirect('/admin/certificationorganizations/certificationcategory/');
+				} else {
+					$this->Session->setFlash('Some error has been occured. Please try again.');
+				}
+			}
+			else{				
+				//$this->request->data["Club"]["logo"]=$this->request->data["Club"]["old_image"];				
+			}				
+		 } else{
+				if(is_numeric($id) && $id > 0) {
+						$this->CertificationCat->id = $id;
+						$this->request->data = $this->CertificationCat->read();
+					} else {
+						$this->Session->setFlash('Invalid Certification Category id.');
+						$this->redirect('/admin/certificationorganizations/certificationcategory/');
+				}
+			}	
+		}
+		
+		
 		
 		
 	}
