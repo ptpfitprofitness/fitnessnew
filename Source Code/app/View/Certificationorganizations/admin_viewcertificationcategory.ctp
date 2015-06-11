@@ -22,6 +22,17 @@
 			<div class="rowElem noborder"><label>Certification Category<span style="color:red;">&nbsp;</span>:</label><div class="formRight" style="margin:0px;">
 				<?php echo $certificationcategoryInfo['CertificationCat']['category_name']; ?>
 			</div><div class="fix"></div></div>
+			<div class="rowElem noborder"><label>Status<span style="color:red;">&nbsp;</span>:</label><div class="formRight" style="margin:0px;">
+				<?php echo $certificationcategoryInfo['CertificationCat']['status']; ?>
+			</div><div class="fix"></div></div>
+			<div class="rowElem noborder"><label>Certification Added date<span style="color:red;">&nbsp;</span>:</label><div class="formRight" style="margin:0px;">
+				<?php echo $certificationcategoryInfo['CertificationCat']['date_addded']; ?>
+			</div><div class="fix"></div></div>
+			
+			<div class="rowElem noborder"><label>Certification Modified date<span style="color:red;">&nbsp;</span>:</label><div class="formRight" style="margin:0px;">
+				<?php echo $certificationcategoryInfo['CertificationCat']['date_modified']; ?>
+			</div><div class="fix"></div></div>
+			
 			
 			
 			
