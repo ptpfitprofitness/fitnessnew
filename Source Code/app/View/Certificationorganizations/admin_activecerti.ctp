@@ -75,7 +75,7 @@ if (($this->Session->check('Message.flash'))) {
  
 <div class="table">
     <div class="head">
-		<h5 class="iFrames">Manage Certification – Organization</h5>
+		<h5 class="iFrames">Manage Certification - Organization</h5>
 		<div class="rowElem noborder" style="clear:none;margin-top: -4px;">
 			<?php if(isset($certificationorganizations) && count($certificationorganizations) > 0){ ?>
 				<?php  echo $this->Form->select('CertificationOrganization.statusTop',unserialize($config['status_array']),array('empty'=>'Select','class'=>'topAction','style'=>'width:17%')); ?>&nbsp;

@@ -154,6 +154,127 @@ App::uses('AppController', 'Controller');
 		}
 		
 		
+		
+		
+		
+		public function admin_activecerti($status = null)
+		{			
+			$conditions = array();
+			$keyword 	= ""; 
+			
+			if(!empty($this->data)){				
+				if( array_key_exists("keyword",$this->data) && !empty($this->data["keyword"]) && ($this->data["keyword"] != "Search by Certification Organization...") ) {					
+					$conditions["OR"] = array(
+												"CertificationOrganization.name LIKE" => "%".$this->data["keyword"]."%"
+											);
+					if( !empty($this->params["named"]["keyword"]) )						
+						$keyword = $this->params["named"]["keyword"];					
+					
+				}else{						
+						if( !empty($this->data['CertificationOrganization']['statusTop']) ) {
+							$action = $this->data['CertificationOrganization']['statusTop'];
+						}elseif( !empty($this->data['CertificationOrganization']['status'])) {
+							$action = $this->data['CertificationOrganization']['status'];
+						}
+						
+						if(isset($this->data['CertificationOrganization']['id']) && count($this->data['CertificationOrganization']['id']) > 0) {
+							$this->update_status(trim($action), $this->data['CertificationOrganization']['id'], count($this->data['CertificationOrganization']['id']));
+						} else {
+							
+							
+							if(isset($this->data["submit"]) && isset($this->data["keyword"]) && ($this->data["keyword"]=='' || $this->data["keyword"]=='Search by Certification Organization...') && $this->data["submit"]=='Search'){
+								$this->Session->setFlash('Please enter keyword to perform search.');
+							}
+							else{
+								$this->Session->setFlash('Please select any checkbox to perform any action.');
+							}
+						}
+				}
+			}
+			
+			if( !empty($this->params["named"]["keyword"]) ) {
+				$conditions["OR"] = array(
+									"CertificationOrganization.name LIKE" => "%".$this->params["named"]["keyword"]."%"
+								);
+				$keyword = $this->params["named"]["keyword"];
+			}			
+					
+			
+			$this->paginate = array("conditions"=>array('CertificationOrganization.status'=>1),'limit' => '10', 'order' => array('CertificationOrganization.name' => 'ASC'));
+			$certificationorganizations = $this->paginate('CertificationOrganization'); //default take the current
+			$this->set('certificationorganizations', $certificationorganizations);
+			$this->set('mode', array('delete'=>'Delete'));
+			$this->set('status', $status);
+			$this->set('tab', '');
+			$this->set('keyword', $keyword);
+			
+			
+			$this->set('limit', $this->params['request']['paging']['CertificationOrganization']['options']['limit']);
+			$this->set('page', $this->params['request']['paging']['CertificationOrganization']['options']['page']);
+		}
+		
+		
+		
+		public function admin_inactivecerti($status = null)
+		{			
+			$conditions = array();
+			$keyword 	= ""; 
+			
+			if(!empty($this->data)){				
+				if( array_key_exists("keyword",$this->data) && !empty($this->data["keyword"]) && ($this->data["keyword"] != "Search by Certification Organization...") ) {					
+					$conditions["OR"] = array(
+												"CertificationOrganization.name LIKE" => "%".$this->data["keyword"]."%"
+											);
+					if( !empty($this->params["named"]["keyword"]) )						
+						$keyword = $this->params["named"]["keyword"];					
+					
+				}else{						
+						if( !empty($this->data['CertificationOrganization']['statusTop']) ) {
+							$action = $this->data['CertificationOrganization']['statusTop'];
+						}elseif( !empty($this->data['CertificationOrganization']['status'])) {
+							$action = $this->data['CertificationOrganization']['status'];
+						}
+						
+						if(isset($this->data['CertificationOrganization']['id']) && count($this->data['CertificationOrganization']['id']) > 0) {
+							$this->update_status(trim($action), $this->data['CertificationOrganization']['id'], count($this->data['CertificationOrganization']['id']));
+						} else {
+							
+							
+							if(isset($this->data["submit"]) && isset($this->data["keyword"]) && ($this->data["keyword"]=='' || $this->data["keyword"]=='Search by Certification Organization...') && $this->data["submit"]=='Search'){
+								$this->Session->setFlash('Please enter keyword to perform search.');
+							}
+							else{
+								$this->Session->setFlash('Please select any checkbox to perform any action.');
+							}
+						}
+				}
+			}
+			
+			if( !empty($this->params["named"]["keyword"]) ) {
+				$conditions["OR"] = array(
+									"CertificationOrganization.name LIKE" => "%".$this->params["named"]["keyword"]."%"
+								);
+				$keyword = $this->params["named"]["keyword"];
+			}			
+					
+			
+			$this->paginate = array("conditions"=>array('CertificationOrganization.status'=>0),'limit' => '10', 'order' => array('CertificationOrganization.name' => 'ASC'));
+			$certificationorganizations = $this->paginate('CertificationOrganization'); //default take the current
+			$this->set('certificationorganizations', $certificationorganizations);
+			$this->set('mode', array('delete'=>'Delete'));
+			$this->set('status', $status);
+			$this->set('tab', '');
+			$this->set('keyword', $keyword);
+			
+			
+			$this->set('limit', $this->params['request']['paging']['CertificationOrganization']['options']['limit']);
+			$this->set('page', $this->params['request']['paging']['CertificationOrganization']['options']['page']);
+		}
+		
+		
+		
+		
+		
 		public function update_status($status, $ids, $count){
 
 			switch(trim($status)){
