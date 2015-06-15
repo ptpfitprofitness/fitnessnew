@@ -63,8 +63,8 @@ function del(field) {
 
 
 <?php
-			echo $this->Html->link('Active Certifications',array('controller'=>'certificationorganizations','action'=>'activecerti'), array('target'=>'_blank','style'=>'background: #21ADED; padding:4px; margin:0 0 0 2px; color: #ffffff'));
-			echo $this->Html->link('In Active Certifications',array('controller'=>'certificationorganizations','action'=>'inactivecerti'), array('target'=>'_blank','style'=>'background: #21ADED; padding:4px; margin:0 0 0 15px; color: #ffffff'));
+			echo $this->Html->link('Active Certifications Org.',array('controller'=>'certificationorganizations','action'=>'activecerti'), array('target'=>'_blank','style'=>'background: #21ADED; padding:4px; margin:0 0 0 2px; color: #ffffff'));
+			echo $this->Html->link('In Active Certifications Org.',array('controller'=>'certificationorganizations','action'=>'inactivecerti'), array('target'=>'_blank','style'=>'background: #21ADED; padding:4px; margin:0 0 0 15px; color: #ffffff'));
 ?>
 
 <div class="content"> 

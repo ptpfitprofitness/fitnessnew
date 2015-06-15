@@ -60,8 +60,8 @@ function del(field) {
 </script> 
 <?php echo $this->Form->create('Certificationorganization' ,array('controller'=>'certificationorganizations', 'action'=>'index',  'class'=>'mainForm', 'id'=>'valid')); ?>
 <?php
-			echo $this->Html->link('Active Certifications',array('controller'=>'certificationorganizations','action'=>'activecerti'), array('target'=>'_blank','style'=>'background: #21ADED; padding:4px; margin:0 0 0 2px; color: #ffffff'));
-			echo $this->Html->link('In Active Certifications',array('controller'=>'certificationorganizations','action'=>'inactivecerti'), array('target'=>'_blank','style'=>'background: #21ADED; padding:4px; margin:0 0 0 15px; color: #ffffff'));
+			echo $this->Html->link('Active Certification Org.',array('controller'=>'certificationorganizations','action'=>'activecerti'), array('target'=>'_blank','style'=>'background: #21ADED; padding:4px; margin:0 0 0 2px; color: #ffffff'));
+			echo $this->Html->link('In Active Certifications Org.',array('controller'=>'certificationorganizations','action'=>'inactivecerti'), array('target'=>'_blank','style'=>'background: #21ADED; padding:4px; margin:0 0 0 15px; color: #ffffff'));
 			?>
 <div class="content"> 
 
