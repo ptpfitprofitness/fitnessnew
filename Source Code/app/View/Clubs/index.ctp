@@ -1,11 +1,10 @@
 <?php
 /*echo '<pre>';
-print_r($setSpecalistArr);
-echo '</pre>';
-$setSpecalistArr['ClubBranch']['id'];*/
+print_r($checkPayment);
+echo '</pre>';*/
+//$setSpecalistArr['ClubBranch']['id'];
 
-    
-
+  
 
 $logo=$config['url'].'images/avtar.png';
 if($this->Session->read('USER_ID'))
@@ -252,7 +251,7 @@ function cancelmyaccount(str)
 		  
 		  <?php if ($setSpecalistArr['ClubBranch']['id']=='') { ?>
 		  <!--<input type="button" style="width:150px;margin-right:10px;" class="change-pic-nav" onclick="popupOpen('pop555');" value="Manage Card Details" name="submit">-->
-		  <input type="button" style="width:150px;margin-right:10px;" class="change-pic-nav" onclick="popupOpen('popbillinginfo');" value="Billing Information" name="submit">
+		  <input type="button" style="width:150px;margin-right:10px;" class="change-pic-nav" onclick="popupOpen('popbillinginfochoice');" value="Billing Information" name="submit">
 		  <?php } ?>
 		  
 		   <input type="button" style="width:150px;margin-right:10px;" class="change-pic-nav" onclick="purchasehistory();" value="Purchase History" name="submit">
@@ -608,6 +607,9 @@ function cancelmyaccount(str)
 .field-pad-billing{padding: 10px 15px;}
 </style>
 <script type="text/javascript">
+
+<?php if (empty($checkPayment)) { ?>
+
  function getRate(plan,cost,id)
  {		
 		var plan_cost = $('#clubcost').val(cost);		
@@ -665,7 +667,100 @@ function cancelmyaccount(str)
         //alert(total_cost);		
 	});
 });
+<?php } else { $nextpaymdate = $checkPayment['Payment']['nextbillingdate']; ?>
+
+var nxtpaydate = '<?php echo $nextpaymdate ;?>';
+var today = new Date();
+
+/*var oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
+var firstDate = new Date(nxtpaydate);
+var secondDate = new Date(today);
+var diffDays = Math.round(Math.abs((firstDate.getTime() - secondDate.getTime())/(oneDay)));*/
+
+var start = new Date(today);
+var end = new Date(nxtpaydate);
+var diff = new Date(end - start);
+var days = Math.round(diff/1000/60/60/24);
+alert(days);
+
+function getRate(plan,cost,id)
+ {		
+		var plan_cost = $('#clubcost').val(cost);		
+		$('#subsplanid').val(id);
+		$('#plan_value').val(cost);
+		var numtrainer = $('#trainernumber').val();		
+		//var total_cost = cost*parseInt(numtrainer);
+		
+		if(days > 0)
+		{
+			var total_cost = (((cost/2)/30)*parseInt(numtrainer));
+		}
+		else
+		{
+			var total_cost = ((cost/2)*parseInt(numtrainer));
+		}
+		
+		
+		$('#clubtotal').val(total_cost);
+		$('#coupon-block').show();
+		$('#tnumber').show();
+		$('#tcost').show();
+		$('#totalvalue').show();
+		$('#sign').show();
+		$('#trainerhave').show();
+		$('#signmul').show();
+		var today = new Date();
+		var dd = today.getDate();
+		var mm = today.getMonth()+1; //January is 0!
+		var yyyy = today.getFullYear();
+		if (plan=='Yearly')
+		{
+			var someDate = new Date();
+			var numberOfDaysToAdd = 365;
+			someDate.setDate(someDate.getDate() + numberOfDaysToAdd);
+			var dd = someDate.getDate();
+			var mm = someDate.getMonth() + 1;
+			var y = someDate.getFullYear();
+			var someFormattedDate = dd + '/'+ mm + '/'+ y;
+			var du = "Billed Yearly on day "+dd;			
+			$('#duration').html(du);
+		}
+		if (plan=='Monthly')
+		{
+			var someDate = new Date();
+			var numberOfDaysToAdd = 30;
+			someDate.setDate(someDate.getDate() + numberOfDaysToAdd);
+			var dd = someDate.getDate();
+			var mm = someDate.getMonth() + 1;
+			var y = someDate.getFullYear();
+			var someFormattedDate = dd + '/'+ mm + '/'+ y;
+			var du = "Billed Monthly on day "+dd;
+			$('#duration').html(du);
+		} 
+		
+ }
+ $(document).ready(function(){
+    $("#trainernumber").blur(function(){
+		var club_cost = $("#plan_value").val();
+		var ac = parseFloat(club_cost);
+		var itrainer_cost = $("#trainernumber").val();		
+		if(days > 0)
+		{
+			var total_cost = (((club_cost/2)/30)*parseInt(itrainer_cost));
+		}
+		else
+		{
+			var total_cost = ((club_cost/2)*parseInt(itrainer_cost));
+		}
+		var final_cost = total_cost.toFixed(2);
+		$("#clubtotal").val(final_cost);
+        //alert(total_cost);		
+	});
+});
+<?php } ?>
+
 </script>
+
 <div id="popbillinginfo" class="main-popup">
 	
 	<div class="overlaybox common-overlay"></div>
@@ -871,6 +966,28 @@ function cancelmyaccount(str)
 
 
 
+<!--Billing Pop Up Choice -->
+<div id="popbillinginfochoice" class="main-popup">
+	
+	<div class="overlaybox common-overlay"></div>
+	
+	<div id="thirtydays" class="register-form-popup billing common-overlaycontent"> 
+		
+		<a class="close-nav" onclick="popupClose('popbillinginfochoice');" id="" href="javascript:void(0);"></a>
+		
+		<div class="row register-popup-form">
+			<div class="twelve columns">
+				<a style="background: none repeat scroll 0 0 hsl(0, 0%, 0%); color: hsl(0, 0%, 100%);display: block;font-weight: bold;margin: 15px;   padding: 15px; text-align: center; width: 45%; float:left;"onclick="popupOpen('popbillinginfo'); popupClose('popbillinginfochoice');" href="javascript:void(1);">
+					Add New Trainer
+				</a>
+				<a style="background: none repeat scroll 0 0 hsl(0, 0%, 0%); color: hsl(0, 0%, 100%);display: block;font-weight: bold;margin: 15px;   padding: 15px; text-align: center;  width: 45%; float:right;" onclick="popupOpen('popbillinginfo1'); popupClose('popbillinginfochoice');" href="javascript:void(2);">
+					Renew Existing Trainer
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!--Billing Pop Up Choice -->
 
 
 

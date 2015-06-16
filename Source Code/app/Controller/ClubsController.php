@@ -201,6 +201,11 @@ App::uses('AppController', 'Controller');
 		$this->set("setSpecalistArr",$setSpecalistArr);
 		$this->set("setUser",$dbusertype);
 		}
+			 $checkPayment = $this->Payment->find("first",array("conditions"=>array('Payment.trainer_id'=>$uid),'order'=>array('Payment.id DESC')));
+			
+			$this->set('checkPayment',$checkPayment);
+			
+			
 			
 		$this->set("countries",$this->Country->find('list',array('fields'=>array('Country.id','Country.name'))));	
 		
@@ -641,7 +646,15 @@ App::uses('AppController', 'Controller');
 		  $this->set("setSpecalistArr",$setSpecalistArr);
 		     	
 		     }
-		    
+		    $checkPayment = $this->Payment->find("first",array("conditions"=>array('Payment.trainer_id'=>$id),'order'=>array('Payment.id DESC')));
+			
+			$this->set('checkPayment',$checkPayment);
+		
+			$change_access_date =  date('Y-m-d h:i:s', strtotime($setSpecalistArr[$dbusertype]['added_date'] . "+30 days"));
+			
+			//echo "<pre>"; print_r($checkPayment); echo "</pre>";
+			
+						
 			$club_logo=$setSpecalistArr[$dbusertype]['website_logo'];
 			
 			$this->set("countries",$this->Country->find('list',array('fields'=>array('Country.id','Country.name'))));
@@ -673,6 +686,14 @@ App::uses('AppController', 'Controller');
 						$this->request->data["Trainer"]["password"]= substr(md5(microtime()),rand(0,26),8);
 						$this->request->data["Trainer"]["status"] 		    = 1;
 						$this->request->data["Trainer"]["first_time_login"] = 0;
+						
+						if(empty($checkPayment)){
+							$this->request->data["Trainer"]["acessdate"] =  $change_access_date;
+						}else{
+							$this->request->data["Trainer"]["acessdate"] =  $checkPayment['Payment']['nextbillingdate'];
+						}
+						
+						
 						$trainerdata['Trainer']['website_logo']=$setSpecalistArr['Club']['website_logo'];
 					    	
 						if($this->Trainer->save($this->data)) {
@@ -778,7 +799,11 @@ Please use your log in credentials below to access your account. Once you\'re lo
 			$club_logo=$setSpecalistArr[$dbusertype]['website_logo'];
 		  }
 		     	
-		     
+		 $checkPayment = $this->Payment->find("first",array("conditions"=>array('Payment.trainer_id'=>$id),'order'=>array('Payment.id DESC')));
+			
+			$this->set('checkPayment',$checkPayment);
+		
+			$change_access_date =  date('Y-m-d h:i:s', strtotime($setSpecalistArr[$dbusertype]['added_date'] . "+30 days"));    
 		     
 			
 			
@@ -809,6 +834,11 @@ Please use your log in credentials below to access your account. Once you\'re lo
 				$trainerdata['Trainer']['first_time_login']=0;
 				$trainerdata['Trainer']['added_date']=date('Y-m-d H:i:s');
 				$trainerdata['Trainer']['modified_date']=date('Y-m-d H:i:s');
+				if(empty($checkPayment)){
+							$this->request->data["Trainer"]["acessdate"] =  $change_access_date;
+						}else{
+							$this->request->data["Trainer"]["acessdate"] =  $checkPayment['Payment']['nextbillingdate'];
+						}
 				$trainerdata['Trainer']['website_logo']=$setSpecalistArr['Club']['website_logo'];
 				
 				$chktArr1=$this->Trainer->find("first",array("conditions"=>array("Trainer.username"=>trim($username))));
