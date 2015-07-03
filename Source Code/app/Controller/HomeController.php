@@ -8246,7 +8246,7 @@ $this->set("setSpecalistArr1",$setSpecalistArr1);
 
 			$this->set("countries",$this->Country->find('list',array('fields'=>array('Country.id','Country.name'))));
 
-			$tranrsdata=$this->Trainee->find('all',array('conditions'=>array('Trainee.trainer_id'=>$id),'order'=>array('Trainee.last_name ASC'),'fields'=>array('Trainee.id','Trainee.full_name','Trainee.address','Trainee.email','Trainee.trainer_setstatus','Trainee.session_reminder_notification','Trainee.comp_session_notification')));
+			$tranrsdata=$this->Trainee->find('all',array('conditions'=>array('Trainee.trainer_id'=>$id, 'Trainee.status'=>1 ),'order'=>array('Trainee.last_name ASC'),'fields'=>array('Trainee.id','Trainee.full_name','Trainee.address','Trainee.email','Trainee.trainer_setstatus','Trainee.session_reminder_notification','Trainee.comp_session_notification')));
 
 			
 

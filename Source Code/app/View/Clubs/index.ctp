@@ -693,7 +693,7 @@ function getRate(plan,cost,id)
 		
 		if(days > 0)
 		{
-			var total_cost = (((cost/2)/30)*parseInt(numtrainer));
+			var total_cost = ((((cost/2)/30)*parseInt(numtrainer))*days);
 		}
 		else
 		{
@@ -746,7 +746,7 @@ function getRate(plan,cost,id)
 		var itrainer_cost = $("#trainernumber").val();		
 		if(days > 0)
 		{
-			var total_cost = (((club_cost/2)/30)*parseInt(itrainer_cost));
+			var total_cost = ((((club_cost/2)/30)*parseInt(itrainer_cost))*days);
 		}
 		else
 		{
